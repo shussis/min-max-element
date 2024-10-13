@@ -1,0 +1,34 @@
+import java.util.Random;
+
+public class Main {
+    public static void main(String[] args) {
+        Random random = new Random();
+        int min = Integer.MAX_VALUE; // Инициализация min
+        int max = Integer.MIN_VALUE; // Инициализация max
+        int[] numbers = new int[10];
+
+        // Заполнение массива случайными числами от 1 до 99
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = random.nextInt(99) + 1;
+        }
+
+        System.out.print("Массив: ");
+        for (int num : numbers) {
+            System.out.print(num + " ");
+        }
+        System.out.println(); // Для удобства вывода
+
+        // Поиск минимального и максимального элементов
+        for (int num : numbers) {
+            if (num < min) {
+                min = num; // Обновление min
+            }
+            if (num > max) {
+                max = num; // Обновление max
+            }
+        }
+
+        System.out.println("Минимальный элемент массива: " + min);
+        System.out.println("Максимальный элемент массива: " + max);
+    }
+}
